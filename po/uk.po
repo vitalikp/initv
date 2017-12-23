@@ -1,0 +1,52 @@
+#
+# Ukrainian translation
+#
+# Copyright © 2016 - Vitaliy Perevertun
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-21 00:08+0300\n"
+"Last-Translator: Vitaliy Perevertun <vitalik.perevertun@gmail.com>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# initv
+msgid "Done"
+msgstr "Виконано"
+
+msgid "Skip"
+msgstr "Пропуск"
+
+msgid "Fail"
+msgstr "Сбій"
+
+#, c-format
+msgid "Init %s module"
+msgstr "Ініціалізація модуля %s"
+
+# core
+msgid "Welcome to"
+msgstr "Ласкаво просимо до"
+
+#, c-format
+msgid "error opening file '%s'"
+msgstr "помилка відкриття файлу '%s'"
+
+#, c-format
+msgid "error checking hostname '%s'"
+msgstr "помилка перевірки імені хосту '%s'"
+
+#, c-format
+msgid "error setting hostname '%s'"
+msgstr "помилка встановлення імені хосту '%s'"
+
+# errors
+msgid "data not present"
+msgstr "немає даних"
+
+msgid "wrong format"
+msgstr "невірний формат"

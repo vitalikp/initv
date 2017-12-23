@@ -1,0 +1,14 @@
+# list of source files containing translatable strings
+# Copyright © 2017 - Vitaliy Perevertun
+
+# initv
+../src/initv.c
+
+# core
+
+# modules
+../src/module/welcome.c
+../src/module/hostname.c
+
+# errors
+../src/error/errlist.c
