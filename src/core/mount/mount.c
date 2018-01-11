@@ -14,12 +14,7 @@
 #include "log.h"
 
 
-#define FSTYPE(type, name) [FS_TYPE_ ## type] = #name,
-static const char* fstypes[FS_TYPE_MAX] =
-{
-#include "fstype.h"
-};
-#undef FSTYPE
+const char* fstypes[FS_TYPE_MAX];
 
 
 int mnt_mount(mount_t *mnt)

@@ -36,6 +36,7 @@ add_library(initv_core_obj STATIC
 	core/mount.h
 	core/locale.c
 	core/vconsole.c
+	core/mount/fstype.c
 	core/mount/init.c
 	core/mount/mount.c
 	module/welcome.c
@@ -54,3 +55,17 @@ add_executable(initv
 )
 target_link_libraries(initv initv_core_obj)
 install(TARGETS initv DESTINATION ${sbindir})
+
+
+# tests
+if (${TESTS_ENABLE})
+
+# test mount fstype
+add_executable(test-mount-fstype
+	core/mount/fstype.c
+)
+target_compile_definitions(test-mount-fstype PRIVATE TESTS)
+
+add_test(NAME mount-fstype COMMAND ./test-mount-fstype)
+
+endif()
