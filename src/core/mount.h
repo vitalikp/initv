@@ -16,6 +16,8 @@
 typedef struct mount_t mount_t;
 
 
+int mnt_init(void);
+
 int mnt_mount(mount_t *mnt);
 
 #endif /* _MOUNT_H_ */

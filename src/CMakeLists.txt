@@ -36,6 +36,7 @@ add_library(initv_core_obj STATIC
 	core/mount.h
 	core/locale.c
 	core/vconsole.c
+	core/mount/init.c
 	core/mount/mount.c
 	module/welcome.c
 	module/signal.c
