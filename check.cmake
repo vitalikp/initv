@@ -31,6 +31,12 @@ if (${NLS_ENABLE})
 	set(LOCALEDIR ${datadir}/locale)
 endif()
 
+# check tests option
+option(TESTS_ENABLE "Enable build tests" OFF)
+if (${TESTS_ENABLE})
+	enable_testing()
+endif()
+
 # check SELinux library
 option(SELINUX_ENABLE "Disable optional SELINUX support" ON)
 if (${SELINUX_ENABLE})
