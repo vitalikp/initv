@@ -8,9 +8,7 @@
  */
 
 #include <stdlib.h>
-#include <errno.h>
 
-#include "log.h"
 #include "init.h"
 #include "core/mount.h"
 #include "core/mount/mount_s.h"
@@ -36,18 +34,10 @@ int mount_init(void)
 	while (i < 3)
 	{
 		p = (mount_t*)&mount_sysfs[i++];
-		res = mount(p->src, p->dir, p->fstype, p->flags, p->opts);
-		if (res < 0)
-		{
-			if (errno == EBUSY)
-			{
-				log_warn("Skip %s, already mounted", p->dir);
-				continue;
-			}
 
-			log_error("Failed to mount %s at %s: %m", p->fstype, p->dir);
+		res = mnt_mount(p);
+		if (res < 0)
 			return -1;
-		}
 	}
 
 	// TODO mount sysfs and other
