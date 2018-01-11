@@ -13,33 +13,7 @@
 #include <sys/mount.h>
 
 
-struct mount_t
-{
-	/**
-	 * source file system
-	 */
-	const char* src;
-
-	/**
-	 * target directory
-	 */
-	const char* dir;
-
-	/**
-	 * file system type
-	 */
-	const char* fstype;
-
-	/**
-	 * mount flags
-	 */
-	unsigned long flags;
-
-	/**
-	 * mount options
-	 */
-	const char* opts;
-};
+typedef struct mount_t mount_t;
 
 
 #endif /* _MOUNT_H_ */

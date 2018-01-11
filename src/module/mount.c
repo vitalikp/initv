@@ -13,9 +13,7 @@
 #include "log.h"
 #include "init.h"
 #include "core/mount.h"
-
-
-typedef struct mount_t mount_t;
+#include "core/mount/mount_s.h"
 
 
 static const mount_t mount_sysfs[] =
