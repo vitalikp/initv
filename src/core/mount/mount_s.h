@@ -11,6 +11,15 @@
 #define _MOUNT_S_H_
 
 
+#define FSTYPE(type, name) FS_TYPE_ ## type,
+typedef enum
+{
+#include "fstype.h"
+	FS_TYPE_MAX
+} FsType;
+#undef FSTYPE
+
+
 struct mount_t
 {
 	/**
@@ -26,7 +35,7 @@ struct mount_t
 	/**
 	 * file system type
 	 */
-	const char* fstype;
+	const FsType fstype;
 
 	/**
 	 * mount flags

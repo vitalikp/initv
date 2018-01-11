@@ -15,10 +15,10 @@
 
 static const mount_t mount_sysfs[] =
 {
-	{ "sysfs",		"/sys",					"sysfs", 		MS_NOSUID|MS_NOEXEC|MS_NODEV,	NULL		},
-	{ "proc",		"/proc",				"proc",			MS_NOSUID|MS_NOEXEC|MS_NODEV,	NULL 		},
-//	{ "devtmpfs",	"/dev",					"devtmpfs",		MS_NOSUID|MS_STRICTATIME,		"mode=755"	},// mounted by kernel
-	{ "securityfs", "/sys/kernel/security", "securityfs",	MS_NOSUID|MS_NOEXEC|MS_NODEV,	NULL		}
+	{ "sysfs",		"/sys",					FS_TYPE_SYS, 	MS_NOSUID|MS_NOEXEC|MS_NODEV,	NULL		},
+	{ "proc",		"/proc",				FS_TYPE_PROC,	MS_NOSUID|MS_NOEXEC|MS_NODEV,	NULL 		},
+//	{ "devtmpfs",	"/dev",					FS_TYPE_DEVTMP,	MS_NOSUID|MS_STRICTATIME,		"mode=755"	},// mounted by kernel
+	{ "securityfs", "/sys/kernel/security", FS_TYPE_SEC,	MS_NOSUID|MS_NOEXEC|MS_NODEV,	NULL		}
 };
 
 

@@ -14,11 +14,24 @@
 #include "log.h"
 
 
+#define FSTYPE(type, name) [FS_TYPE_ ## type] = #name,
+static const char* fstypes[FS_TYPE_MAX] =
+{
+#include "fstype.h"
+};
+#undef FSTYPE
+
+
 int mnt_mount(mount_t *mnt)
 {
+	const char *type;
 	int res;
 
-	res = mount(mnt->src, mnt->dir, mnt->fstype, mnt->flags, mnt->opts);
+	type = fstypes[mnt->fstype];
+	if (!type)
+		return -1;
+
+	res = mount(mnt->src, mnt->dir, type, mnt->flags, mnt->opts);
 	if (res < 0)
 	{
 		if (errno == EBUSY)
@@ -27,7 +40,7 @@ int mnt_mount(mount_t *mnt)
 			return 0;
 		}
 
-		log_error("Failed to mount %s at %s: %m", mnt->fstype, mnt->dir);
+		log_error("Failed to mount %s at %s: %m", type, mnt->dir);
 		return -1;
 	}
 
