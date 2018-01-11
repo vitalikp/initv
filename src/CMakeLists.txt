@@ -1,6 +1,8 @@
 # initv cmake file
 
 
+include_directories(.)
+
 # initv error
 include_directories(error)
 add_library(initv_error_obj STATIC
@@ -31,6 +33,7 @@ add_library(initv_conf_obj STATIC
 include_directories(core)
 add_library(initv_core_obj STATIC
 	core/init.h
+	core/mount.h
 	core/locale.c
 	core/vconsole.c
 	module/welcome.c

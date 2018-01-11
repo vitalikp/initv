@@ -1,5 +1,5 @@
 /*
- * Copyright © 2017 - Vitaliy Perevertun
+ * Copyright © 2017-2018 - Vitaliy Perevertun
  *
  * This file is part of initv
  *
@@ -9,41 +9,13 @@
 
 #include <stdlib.h>
 #include <errno.h>
-#include <sys/mount.h>
 
 #include "log.h"
 #include "init.h"
+#include "core/mount.h"
 
 
 typedef struct mount_t mount_t;
-
-struct mount_t
-{
-	/**
-	 * source file system
-	 */
-	const char* src;
-
-	/**
-	 * target directory
-	 */
-	const char* dir;
-
-	/**
-	 * file system type
-	 */
-	const char* fstype;
-
-	/**
-	 * mount flags
-	 */
-	unsigned long flags;
-
-	/**
-	 * mount options
-	 */
-	const char* opts;
-};
 
 
 static const mount_t mount_sysfs[] =
